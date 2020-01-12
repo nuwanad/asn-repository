@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+									   
+    <changeSet author="Nuwan" id="init_data">
+        <sql>
+		    INSERT INTO `asn`.`product` (`name`, `current_price`, `last_update`) VALUES('product1', 12.45, now());
+		    INSERT INTO `asn`.`product` (`name`, `current_price`, `last_update`) VALUES('product2', 15.75, now());
+        </sql>
+    </changeSet>
+            
+</databaseChangeLog>

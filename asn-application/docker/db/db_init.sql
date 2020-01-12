@@ -1,0 +1,2 @@
+CREATE DATABASE asn;
+USE asn;

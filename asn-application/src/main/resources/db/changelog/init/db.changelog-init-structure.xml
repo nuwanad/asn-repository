@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+									   
+    <changeSet author="Nuwan" id="init_structure">
+        <sql>
+		    CREATE TABLE `asn`.`product` (
+                `id` int(11) NOT NULL AUTO_INCREMENT,
+                `name` varchar(50) NOT NULL,
+                `current_price` decimal(20,2) NOT NULL,
+                `last_update` datetime NOT NULL,
+                 PRIMARY KEY (`id`),
+                 UNIQUE KEY `unique_name` (`name`)
+            );
+        </sql>
+
+    </changeSet>
+
+</databaseChangeLog>

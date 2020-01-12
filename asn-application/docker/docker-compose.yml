@@ -1,0 +1,30 @@
+version: '3.3'
+
+services:
+
+  asn-mysql:
+    image: asn-mysql:latest
+    container_name: asn-mysql
+    hostname: asn-mysql
+    build:
+      context: db
+      dockerfile: Dockerfile
+    ports:
+      - 3306:3306
+    volumes:
+      - asn-mysql-data:/var/lib/mysql
+
+  asn-application:
+    image: asn-application:latest
+    container_name: asn-application
+    hostname: asn-application
+    build:
+      context: ../
+      dockerfile: docker/application/Dockerfile
+    ports:
+      - 8080:8080
+    depends_on:
+      - asn-mysql
+
+volumes:
+  asn-mysql-data:
