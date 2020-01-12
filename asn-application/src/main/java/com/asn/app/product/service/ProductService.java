@@ -11,7 +11,7 @@ public interface ProductService {
 
     ProductDTO getProduct(Integer id);
     
-    void updateProduct(Integer id, ProductUpdateDTO product);
+    ProductDTO updateProduct(Integer id, ProductUpdateDTO product);
 
     ProductDTO saveProduct(ProductUpdateDTO product);
 

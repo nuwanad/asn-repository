@@ -33,7 +33,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void updateProduct(Integer id, ProductUpdateDTO product) {
+    public ProductDTO updateProduct(Integer id, ProductUpdateDTO product) {
         
         Optional<Product> dbProduct = productRepository.findById(id);
 
@@ -50,7 +50,7 @@ public class ProductServiceImpl implements ProductService {
                     .description(product.getDescription())
                     .build();
 
-            productRepository.save(entity);
+            return convert(productRepository.save(entity));
             
         } else {
             throw new ProductNotFoundException();
