@@ -39,4 +39,5 @@ public class Product {
     @Column(name = "last_update")
     private Timestamp lastUpdate;
 
+    private String description;
 }

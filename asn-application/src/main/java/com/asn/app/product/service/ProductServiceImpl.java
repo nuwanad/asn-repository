@@ -47,6 +47,7 @@ public class ProductServiceImpl implements ProductService {
             
             Product entity = Product.builder().id(id).name(product.getName()).currentPrice(product.getCurrentPrice())
                     .lastUpdate(new Timestamp(System.currentTimeMillis()))
+                    .description(product.getDescription())
                     .build();
 
             productRepository.save(entity);
@@ -65,6 +66,7 @@ public class ProductServiceImpl implements ProductService {
         
         Product entity = Product.builder().name(product.getName()).currentPrice(product.getCurrentPrice())
                 .lastUpdate(new Timestamp(System.currentTimeMillis()))
+                .description(product.getDescription())
                 .build();
 
         return convert(productRepository.save(entity));
@@ -73,6 +75,7 @@ public class ProductServiceImpl implements ProductService {
     private ProductDTO convert(Product product) {
         return ProductDTO.builder().id(product.getId()).name(product.getName()).currentPrice(product.getCurrentPrice())
                 .lastUpdate(product.getLastUpdate())
+                .description(product.getDescription())
                 .build();
     }
 

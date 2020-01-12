@@ -21,4 +21,6 @@ public class ProductDTO {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private Timestamp lastUpdate;
 
+    private String description;
+
 }

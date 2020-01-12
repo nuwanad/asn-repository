@@ -22,4 +22,7 @@ public class ProductUpdateDTO {
     @DecimalMin(value = "0.00", message = "price cannot be zero or negative", inclusive = false)
     private BigDecimal currentPrice;
 
+    @Size(max = 100, message = "Description max length exceeded")
+    @NotNull(message = "Description cannot be null")
+    private String description;
 }
